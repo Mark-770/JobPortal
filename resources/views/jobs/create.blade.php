@@ -1,10 +1,9 @@
-    @extends('layouts.app')
-
+@extends('layouts.main')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="col-md-8" style="margin-top: 150px;">
+            <div class="card mb-5">
                 <div class="card-header">Create a job</div>
                 <div class="card-body">
                     @if (Session::has('message'))
@@ -25,7 +24,7 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Description:</label>
-                        <textarea name="description" class="form-control @error('title') is-invalid @enderror" value="{{ old('description') }}" id="" cols="10" rows="3"></textarea>
+                        <textarea name="description" class="form-control @error('title') is-invalid @enderror" id="" cols="10" rows="3">{{ old('description') }}</textarea>
                         @error('description')
                         <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -34,7 +33,7 @@
                     </div>
                     <div class="form-group">
                         <label for="role">Role:</label>
-                        <textarea name="roles" class="form-control @error('roles') is-invalid @enderror" value="{{ old('roles') }}" id="" cols="10" rows="2"></textarea>
+                        <textarea name="roles" class="form-control @error('roles') is-invalid @enderror" id="" cols="10" rows="2">{{ old('roles') }}</textarea>
                         @error('roles')
                         <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -43,7 +42,7 @@
                     </div>
                     <div class="form-group">
                         <label for="category">Category:</label>
-                        <select name="category_id" class="form-control @error('roles') is-invalid @enderror" value="{{ old('roles') }}" id="">
+                        <select name="category_id" class="form-control @error('category_id') is-invalid @enderror" id="">
                             @foreach(App\Category::all() as $cat)
                                 <option value="{{ $cat->id }}">{{ $cat->name }}</option>
                             @endforeach
@@ -97,7 +96,6 @@
                                 <option value="10000-20000">10000-20000</option>
                                 <option value="30000-500000">50000-500000</option>
                                 <option value="500000-600000">500000-600000</option>
-
                                 <option value="600000 plus">600000 plus</option>
                             </select>
                         </div>
@@ -127,7 +125,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="lastdate">Last date:</label>
+                        <label for="last_date">Last date:</label>
                         <input type="date" name="last_date" class="form-control @error('last_date') is-invalid @enderror" value="{{ old('last_date') }}">
                         @error('last_date')
                         <span class="invalid-feedback" role="alert">

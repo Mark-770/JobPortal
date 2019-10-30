@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row justify-content-center">
 
-        <div class="col-md-10" style="margin-top: 250px;">
+        <div class="col-md-10" style="margin-top: 150px;">
 
             @if (Auth::user()->user_type==='seeker')
                 <h2>Saved Jobs</h2>

@@ -94,18 +94,26 @@
               </p>
 
 </div>
-@foreach ($jobRecommendations as $jobRecommendation)
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <p class="badge badge-success">{{$jobRecommendation->type}}</p>
-    <h5 class="card-title">{{$jobRecommendation->position}}</h5>
-    <p class="card-text">{{str_limit($jobRecommendation->description,80)}}
-   <center >
-       <a href="{{route('jobs.show',[$jobRecommendation->id,$jobRecommendation->slug])}}" class="btn btn-success justify-content-end">Apply</a>
-   </center>
-  </div>
-</div>
-       @endforeach
+           <div class="row">
+               <div class="col-md-12">
+                   <div class="rec_job d-flex  mt-5 ">
+                       @foreach ($jobRecommendations as $jobRecommendation)
+                           <div class="card d-flex mr-2 justify-content-center" style="width: 18rem;">
+                               <div class="card-body  text-center">
+                                   <p class="badge badge-success">{{$jobRecommendation->type}}</p>
+                                   <h5 class="card-title">{{$jobRecommendation->position}}</h5>
+                                   <p class="card-text">{{str_limit($jobRecommendation->description,80)}}
+                                   <div >
+                                       <a href="{{route('jobs.show',[$jobRecommendation->id,$jobRecommendation->slug])}}" class="btn btn-success justify-content-end">Apply</a>
+                                   </div>
+
+
+                               </div>
+                           </div>
+                       @endforeach
+                   </div>
+               </div>
+           </div>
 
 
 <!-- Modal -->

@@ -11,6 +11,7 @@ use App\Job;
 use Auth;
 use App\User;
 
+
 class JobController extends Controller
 {
     public function __construct()
@@ -81,6 +82,7 @@ class JobController extends Controller
 
     public function store(JobPostRequest $request)
     {
+
         $user_id = auth()->user()->id;
         $company = Company::where('user_id',$user_id)->first();
         $company_id = $company->id;
@@ -120,6 +122,18 @@ class JobController extends Controller
 
     public function update(Request $request,$id)
     {
+        $this->validate($request,[
+            'title'=>'required|min:3',
+            'description'=>'required|min:7',
+            'roles'=>'required',
+            'address'=>'required|min:3',
+            'position'=>'required',
+            'last_date'=>'required',
+            'number_of_vacancy'=>'required|numeric',
+            'experience'=>'required|numeric'
+        ]);
+
+
         $job = Job::findOrFail($id);
         $job->update($request->all());
         return redirect()->back()->with('message','Job  successfully Updated!');

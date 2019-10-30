@@ -6,7 +6,7 @@
             @foreach($companies as $company)
 
             <div class="col-md-3 "style="margin-top: 100px;">
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 18rem;min-height: 240px; ">
                     @if (empty($company->cover_photo))
                         <img src="{{ asset('cover/tumblr-image-sizes-banner.png') }}" alt="banner" class="card-img-top"  style="width: 100%;">
                     @else

@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['seeker','verified']);
+        $this->middleware(['seeker','verified'],['except'=>array('profile')]);
     }
 
     public function index()

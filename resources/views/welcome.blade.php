@@ -41,7 +41,12 @@
                         border-bottom
                         @if($job->type=='parttime') partime @elseif($job->type=='fulltime')fulltime @else freelance   @endif;">
                             <div class="company-logo blank-logo text-center text-md-left pl-3">
-                                <img src="{{ asset('uploads/logo') }}/{{$job->company->logo}}" alt="Image" class="img-fluid mx-auto">
+
+                                @if (empty($job->company->cover_photo))
+                                    <img src="{{ asset('uploads/logo/serwman1.jpg') }}" alt="banner" class="card-img-top"  style="width: 100%;">
+                                @else
+                                    <img src="{{ asset('uploads/logo') }}/{{$job->company->logo}}" alt="Image" class="img-fluid mx-auto">
+                                @endif
                             </div>
                             <div class="job-details h-100">
                                 <div class="p-3 align-self-center">

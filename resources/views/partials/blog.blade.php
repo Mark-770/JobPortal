@@ -13,15 +13,13 @@
             <div class="media-with-text">
                 <a href="{{route('post.show',[$post->id,$post->slug])}}" class="image-play">
                     <img src="{{asset('storage/'.$post->image)}}" alt="post image" class="img-fluid">
-                </a>
+
                 <h2 class="heading mb-0 h5">{{$post->title}}</h2>
-                <span class="mb-3 d-block post-date">{{$post->created_at->diffForHumans()}} <a href="#">Admin</a></span>
+                <span class="mb-3 d-block post-date">{{$post->created_at->diffForHumans()}} <a href="{{route('post.show',[$post->id,$post->slug])}}">Admin</a></span>
                 <p>{{str_limit($post->text,50)}}</p>
+                </a>
             </div>
             @endforeach
-
-
-        <div class="row">
 
         </div>
     </div>

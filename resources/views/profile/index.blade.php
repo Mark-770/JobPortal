@@ -1,8 +1,10 @@
-@extends('layouts.app')
-
+@extends('layouts.main')
 @section('content')
 <div class="container">
-    <div class="row ">
+    <div class="row">
+        <div class="col-md-12" style="margin-top: 150px;">
+
+        </div>
         <div class="col-md-3">
             @if (empty(Auth::user()->profile->avatar))
                 <img src="{{ asset('avatar/serwman1.jpg') }}" alt="avatar" width="100px;" class="mb-5" style="width: 100%;">
@@ -83,7 +85,7 @@
             </form>
             <form action="{{ route('resume') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <div class="card">
+                <div class="card mb-5">
                     <div class="card-header">Update resume</div>
                     <div class="card-body">
                         <input type="file" class="form-control" name="resume">
