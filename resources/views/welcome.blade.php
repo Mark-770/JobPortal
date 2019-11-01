@@ -157,5 +157,12 @@
 
     @include('partials.footer')
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <script>
+        window.replainSettings = { id: 'a62778c5-1215-4b24-aa49-35207b26953b' };
+        (function(u){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src=u;
+            var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
+        })('https://widget.replain.cc/dist/client.js');
+    </script>
 </body>
 </html>

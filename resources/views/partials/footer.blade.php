@@ -84,6 +84,16 @@
 <script src="{{asset('external/js/main.js')}}"></script>
 
 
+{{--bot--}}
+<script>
+    window.replainSettings = { id: 'a62778c5-1215-4b24-aa49-35207b26953b' };
+    (function(u){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src=u;
+        var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
+    })('https://widget.replain.cc/dist/client.js');
+</script>
+{{--endbot--}}
+
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var mediaElements = document.querySelectorAll('video, audio'), total = mediaElements.length;
