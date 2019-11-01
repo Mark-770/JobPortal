@@ -84,3 +84,6 @@ Route::get('/dashboard/{id}/jobs','DashboardController@changeJobStatus')->name('
 Route::get('testimonial/','TestimonialController@index')->middleware('admin');
 Route::get('testimonial/create','TestimonialController@create')->middleware('admin');
 Route::post('testimonial/create','TestimonialController@store')->name('testimonial.store')->middleware('admin');
+
+//comment
+Route::post('comment/{id}/create','CommentController@store')->name('comment.store');

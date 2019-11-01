@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
    <div class="album text-muted">
-     <div class="container">
+     <div class="container" id="app">
        <div class="row" id="app">
           <div class="title" style="margin-top: 100px;">
                 <h2 class="mt-4">{{$job->title}}</h2>
@@ -92,8 +92,47 @@
                       <favorite-component :jobid="{{ $job->id }}" :favorited="{{ $job->checkSaved()?'true':'false' }}"></favorite-component>
                   @endif
               </p>
+            </div>
+            </div>
 
-</div>
+         @if(Auth::check())
+         <div class="row">
+             <div class="col-md-6">
+                 <form action="{{ route('comment.store',[$job->id]) }}" method="POST">
+                     @csrf
+                 <div class="card mt-5">
+                     <div class="card-header">
+                         Comments
+                     </div>
+                     <div class="card-body">
+                         <div>
+                             @foreach ($job->comments as $comment)
+{{--                                 @foreach($job->users as $user)--}}
+                            <p>
+                                {{ $comment->comment }}
+                            </p>
+{{--                                     @endforeach--}}
+                             @endforeach
+                         </div>
+                     </div>
+                     <div class="card-footer">
+                         <label for="comment"></label>
+                         <textarea name="comment" placeholder="Write you comment here" class="form-control @error('comment') is-invalid @enderror"  id="" cols="10" rows="3"></textarea>
+                         @error('comment')
+                         <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                         @enderror
+                         <div class="form-group ">
+                             <button type="submit" class="btn btn-primary  mt-2" style="color: #ffffff;">Send Message</button>
+                         </div>
+
+                     </div>
+                 </div>
+                 </form>
+             </div>
+         </div>
+         @endif
            <div class="row">
                <div class="col-md-12">
                    <div class="rec_job d-flex  mt-5 ">
@@ -114,6 +153,8 @@
                    </div>
                </div>
            </div>
+
+
 
 
 <!-- Modal -->
@@ -160,7 +201,7 @@
 </div>
            <!-- End Modal -->
 
-               </div>
+
 
 
 <br>

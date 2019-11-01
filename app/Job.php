@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Category;
 use App\User;
+use App\Comment;
 
 class Job extends Model
 {
@@ -42,6 +43,11 @@ class Job extends Model
     public function checkSaved()
     {
         return \DB::table('favourites')->where('user_id',auth()->user()->id)->where('job_id',$this->id)->exists();
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 
 }

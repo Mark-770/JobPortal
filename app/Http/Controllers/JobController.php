@@ -33,7 +33,6 @@ class JobController extends Controller
         return view('jobs.create');
     }
 
-
     public function  show($id,Job $job)
     {
         $jobRecommendations = $this->jobRecommendations($job);

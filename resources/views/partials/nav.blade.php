@@ -1,3 +1,14 @@
+<div class="site-wrap">
+
+    <div class="site-mobile-menu">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close mt-3">
+                <span class="icon-close2 js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+
 <div class="site-navbar-wrap js-site-navbar bg-white">
 
     <div class="container">
@@ -23,7 +34,7 @@
                                     @else
                                         @if(Auth::user()->user_type==='seeker')
                                             <li class="dropdown">
-                                                <button class="btn  dropdown-toggle" style="background: none;text-transform: uppercase;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <button class="btn btn-my  dropdown-toggle" style="background: none;text-transform: uppercase;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Profile
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -35,7 +46,7 @@
 
                                         @if(Auth::user()->user_type==='employer')
                                             <li class="dropdown">
-                                                <button class="btn  dropdown-toggle" style="background: none;text-transform: uppercase;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <button class="btn  dropdown-toggle btn-my" style="background: none;text-transform: uppercase;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Profile
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -48,7 +59,7 @@
                                         @endif
                                             @if(Auth::user()->user_type==='admin')
                                                 <li class="dropdown">
-                                                    <button class="btn  dropdown-toggle" style="background: none;text-transform: uppercase;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <button class="btn btn-my dropdown-toggle" style="background: none;text-transform: uppercase;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                         Dashboard
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -173,3 +184,10 @@
         </div>
     </div>
 </div>
+
+    <style>
+        .btn-my:hover {
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+        }
+    </style>

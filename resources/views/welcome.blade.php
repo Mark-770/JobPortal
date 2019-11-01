@@ -4,7 +4,7 @@
     <title>Job Finder &mdash; Colorlib Website Template</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
   @include('partials.head')
 
 </head>
@@ -18,7 +18,7 @@
                 <span class="icon-close2 js-menu-toggle"></span>
             </div>
         </div>
-        <div class="site-mobile-menu-body"></div>
+        <div class="site-mobile-menu-body "></div>
     </div> <!-- .site-mobile-menu -->
 
 
@@ -156,6 +156,6 @@
 
 
     @include('partials.footer')
-
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 </html>

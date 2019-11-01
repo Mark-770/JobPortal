@@ -62,8 +62,8 @@
 </div>
 
 <script src="{{asset('external/js/jquery-3.3.1.min.js')}}"></script>
-<script src="{{asset('external/js/popper.min.js')}}"></script>
-<script src="{{asset('external/js/bootstrap.min.js')}}"></script>
+{{--<script src="{{asset('external/js/popper.min.js')}}"></script>--}}
+{{--<script src="{{asset('external/js/bootstrap.min.js')}}"></script>--}}
 
 
 <script src="{{asset('external/js/jquery-migrate-3.0.1.min.js')}}"></script>
@@ -75,7 +75,7 @@
 <script src="{{asset('external/js/jquery.stellar.min.js')}}"></script>
 <script src="{{asset('external/js/jquery.countdown.min.js')}}"></script>
 <script src="{{asset('external/js/jquery.magnific-popup.min.js')}}"></script>
-<script src="{{asset('external/js/bootstrap-datepicker.min.js')}}"></script>
+{{--<script src="{{asset('external/js/bootstrap-datepicker.min.js')}}"></script>--}}
 <script src="{{asset('external/js/aos.js')}}"></script>
 
 
