@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Contracts\Support\Renderable;
 
 class HomeController extends Controller
 {
@@ -15,13 +15,13 @@ class HomeController extends Controller
     public function __construct()
     {
 
-        $this->middleware(['auth','verified']);
+        $this->middleware(['auth', 'verified']);
     }
 
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return Renderable
      */
     public function index()
     {
@@ -29,7 +29,7 @@ class HomeController extends Controller
         return view('home', compact('jobs'));
 
         $adminRole = Auth::user()->roles()->pluck('name');
-        if($adminRole->contains('admin')) {
+        if ($adminRole->contains('admin')) {
             return redirect('/dashboard');
         }
     }

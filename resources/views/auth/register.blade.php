@@ -4,7 +4,7 @@
     <div class="site-section bg-light">
         <div class="container">
             <div class="row">
-                <h1>Seeker Registration</h1>
+                <h1 class="mt-5">Seeker Registration</h1>
 
                 <div class="site-section bg-light">
                     <div class="container">
