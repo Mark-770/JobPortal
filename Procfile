@@ -1,2 +1,2 @@
 
-heroku run "php artisan storage:link; ls -la public"
+heroku run "php artisan storage:link;"
