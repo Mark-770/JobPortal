@@ -14,12 +14,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 
 
-
 <link rel="stylesheet" href="external/fonts/flaticon/font/flaticon.css">
 
 <link rel="stylesheet" href="{{asset('external/css/aos.css')}}">
 
 <link rel="stylesheet" href="{{asset('external/css/style.css')}}">
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
 
